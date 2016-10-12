@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var CityInput = require('../components/CityInput');
+var weatherApi = require('../helpers/api'); 
 
 var CityInputContainer = React.createClass({
     getInitialState: function () {
@@ -10,6 +11,7 @@ var CityInputContainer = React.createClass({
     },
     handleSubmit: function() {
         console.log(this.state.city);
+        weatherApi.getForecast(this.state.city);
     },
     handleUpdate: function(e){        
         this.setState({
