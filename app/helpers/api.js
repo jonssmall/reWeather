@@ -20,9 +20,9 @@ var buildForecastCall = function(city) {
 
 var getWeather = function(city) {
     var api = buildWeatherCall(city);
-    axios.get(api)
+    return axios.get(api)
         .then(function(data){
-            console.log(data);
+            return data;
         }).catch(function(error){
             console.log(error);
         });
@@ -30,9 +30,10 @@ var getWeather = function(city) {
 
 var getForecast = function(city) {
     var api = buildForecastCall(city);
-    axios.get(api)
+    return axios.get(api)
         .then(function(data){
             console.log(data);
+            return data;
         }).catch(function(error){
             console.log(error);
         });
